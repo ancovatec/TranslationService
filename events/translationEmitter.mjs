@@ -3,4 +3,8 @@ import EventEmitter from 'events';
 class TranslationEmitter extends EventEmitter {
 }
 
-export default new TranslationEmitter();
+const emitter = new TranslationEmitter();
+
+emitter.setMaxListeners(0);
+
+export default emitter;

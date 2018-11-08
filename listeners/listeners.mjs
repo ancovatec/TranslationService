@@ -1,9 +1,15 @@
-import onAddLanguage from './onAddLanguage';
-import onEmit from './onEmit';
+import addLanguage from './addLanguage';
+import addText from './addText';
+import addEvent from './addEvent';
+import startTranslate from './startTranslate';
+import translateText from './translateText';
 
 const listener = () => {
-    onAddLanguage();
-    onEmit();
+    addEvent();
+    addLanguage();
+    addText();
+    startTranslate();
+    translateText();
 };
 
 export default listener;

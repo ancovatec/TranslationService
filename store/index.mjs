@@ -3,6 +3,7 @@ class Store {
     constructor(){
         this.events = [];
         this.languages = [];
+        this.texts = [];
     }
 
     addEvent(event) {
@@ -19,6 +20,14 @@ class Store {
 
     getLanguages() {
         return this.languages;
+    }
+
+    addText(textData) {
+        this.texts.push(textData);
+    }
+
+    getTexts() {
+        return this.texts;
     }
 
 }

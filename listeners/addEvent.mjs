@@ -1,5 +1,7 @@
 import Emmitter from '../events/translationEmitter';
 import AddLanguageEvent from '../events/addLanguageEvent';
+import AddTextEvent from '../events/addTextEvent';
+import TranslateTextEvent from '../events/translateTextEvent';
 import Store from '../store';
 
 const RegisterListener = (eventType) => {
@@ -8,10 +10,12 @@ const RegisterListener = (eventType) => {
     });
 };
 
-const onEmit = () => {
+const addEvent = () => {
     [
-        AddLanguageEvent.TYPE
+        AddLanguageEvent.TYPE,
+        AddTextEvent.TYPE,
+        TranslateTextEvent.TYPE
     ].forEach(RegisterListener);
 };
 
-export default onEmit;
+export default addEvent;
