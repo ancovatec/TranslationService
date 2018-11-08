@@ -3,7 +3,8 @@ import Event from '../events/addLanguageEvent';
 import Store from '../store';
 
 const onAddLanguage = () => {
-    Emmitter.on(Event.TYPE, ({language, country, tag}) => {
+    Emmitter.on(Event.TYPE, ({data}) => {
+        const {language, country, tag} = data;
         Store.addLanguage({
             language,
             country,

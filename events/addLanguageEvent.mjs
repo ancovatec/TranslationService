@@ -5,9 +5,11 @@ class AddLanguageEvent extends TranslationEvent {
     constructor(language, country, tag, userId) {
         super(AddLanguageEvent.TYPE, userId);
 
-        this.language = language;
-        this.country = country;
-        this.tag = tag;
+        this.data = {
+            language,
+            country,
+            tag
+        };
     }
 }
 

@@ -11,7 +11,7 @@ export default class TranslationEvent {
     }
 
     emit(){
-        console.log(`Emmiting event ${this.type}`, this);
+        console.log("Emmiting", this);
         TranslationEmitter.emit(this.type, this);
     }
 }
