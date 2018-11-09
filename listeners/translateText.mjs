@@ -1,7 +1,7 @@
 import strictUriEncode from 'strict-uri-encode';
 import Emmitter from '../events/translationEmitter';
 import Event from '../events/translateTextEvent';
-//import TranslateTextHandler from '../handlers/translateTextHandler';
+import TextTranslatedHandler from '../handlers/textTranslatedHandler';
 import fetch from 'node-fetch';
 
 const getTranslateUrl = (sourceLanguageTag, targetLanguageTag, text) => 
@@ -14,7 +14,11 @@ const translateText = () => {
 
         fetch(url)
             .then(res => res.json())
-            .then(json => console.log(json));
+            .then(json => {
+                const handler = new TextTranslatedHandler();
+                const translatedText = json[0][0][0];
+                handler.emit(key, translatedText, targetLanguageTag, userId);
+            });
     });
 };
 

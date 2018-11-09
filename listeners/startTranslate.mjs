@@ -10,7 +10,7 @@ const startTranslate = () => {
 
         Store.getLanguages().forEach(language => {
             if(language.tag !== languageTag) {
-                handler.Emit(key, text, languageTag, language.tag, userId);
+                handler.emit(key, text, languageTag, language.tag, userId);
             }
         });;
     });

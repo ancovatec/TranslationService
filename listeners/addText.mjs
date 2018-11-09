@@ -9,7 +9,10 @@ const addText = () => {
         Store.addText({
             key,
             text,
-            languageTag
+            languageTag,
+            traductions: {
+                [languageTag]: text
+            }
         });
     });
 };
