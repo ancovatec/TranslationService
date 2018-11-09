@@ -31,11 +31,9 @@ class Store {
     }
 
     addTranslation(key, translatedText, languageTag) {
-        console.log(key, translatedText);
         const textData = this.texts.find(t => t.key === key);
-        console.log(textData);
         if(textData) {
-            textData.traductions[languageTag] = translatedText;
+            textData.translations[languageTag] = translatedText;
         }
     }
 

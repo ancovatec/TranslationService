@@ -10,7 +10,7 @@ const addText = () => {
             key,
             text,
             languageTag,
-            traductions: {
+            translations: {
                 [languageTag]: text
             }
         });
